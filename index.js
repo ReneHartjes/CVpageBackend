@@ -44,7 +44,7 @@ app.get("/api/get",(req, res)=>{
 
 });
 
-app.listen(3001, ()=> {
+app.listen(process.env.PORT || Port, ()=> {
 
 console.log("running on port 3001");
 
