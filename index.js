@@ -7,9 +7,9 @@ const db = mysql.createPool({
 
 
 host: 'localhost',
-user: 'root',
+user: 'root@localhost',
 password: '',
-database:'prodb'
+database:'test'
 
 
 });
@@ -24,7 +24,7 @@ app.post("/api/insert",(req, res)=>{
     const namess = req.body.namess
     const msgss = req.body.msgss
     
-    const sqladd ="INSERT INTO commentary(userid, usertext) VALUES(?,?);"
+    const sqladd ="INSERT INTO commentstable(userid, messages) VALUES(?,?);"
     db.query(sqladd, [namess, msgss])    
 
 });
@@ -34,7 +34,7 @@ app.get("/api/get",(req, res)=>{
 
 
     
-    const sqladds ="SELECT * FROM commentary;"
+    const sqladds ="SELECT * FROM commentstable;"
     db.query(sqladds ,(err,result) =>{
         res.send(result);
 
@@ -44,8 +44,8 @@ app.get("/api/get",(req, res)=>{
 
 });
 
-app.listen(3001, ()=> {
+app.listen(80, ()=> {
 
-console.log("running on port 3001");
+console.log("running on port 80");
 
 });
