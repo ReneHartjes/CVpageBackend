@@ -44,6 +44,16 @@ app.get("/api/get",(req, res)=>{
 
 });
 
+
+
+app.get("/api/lol",(req, res)=>{
+
+
+    console.log("huhusqwqwq")
+  
+
+});
+
 app.listen(80, ()=> {
 
 console.log("running on port 80");
