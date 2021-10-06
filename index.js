@@ -24,7 +24,7 @@ app.post("/api/insert",(req, res)=>{
     const namess = req.body.namess
     const msgss = req.body.msgss
     
-    const sqladd ="INSERT INTO commentstable(userid, messages) VALUES(?,?);"
+    const sqladd ="INSERT INTO commentstable(userid, messages) VALUES(Rattenboy,Einfach klasse!);"
     db.query(sqladd, [namess, msgss])    
 
 });
